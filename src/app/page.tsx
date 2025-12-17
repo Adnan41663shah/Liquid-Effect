@@ -53,7 +53,7 @@ export default function Home() {
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="https://github.com"
+              href="https://github.com/Adnan41663shah/Liquid-Effect"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-gray-900 font-semibold text-sm sm:text-base hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"

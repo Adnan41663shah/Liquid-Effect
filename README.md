@@ -1,5 +1,7 @@
 # 🌊 Liquid Effect Animation
 
+Live Link: https://liquid-effect-gamma.vercel.app/
+
 A stunning, interactive WebGL-powered liquid animation background component built with React, Next.js, and Three.js. Create immersive water-like distortion effects that respond to user mouse movements.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
