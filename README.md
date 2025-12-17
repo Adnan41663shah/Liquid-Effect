@@ -332,16 +332,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-The main showcase page featuring the liquid effect with a glassmorphism card overlay.
-
-### Interactive Demo
-Full control panel to customize metalness, roughness, wave intensity, rain effect, and background images in real-time.
-
----
-
 <p align="center">
   Made with ❤️ using Next.js, React, and Three.js
 </p>
