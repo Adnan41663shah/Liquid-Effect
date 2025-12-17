@@ -1,65 +1,81 @@
-import Image from "next/image";
+import { LiquidEffectAnimation } from "@/components/ui/liquid-effect-animation"
+import { Droplets, Mountain, Waves } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="relative min-h-screen w-full overflow-hidden">
+      {/* Liquid Background Effect */}
+      <LiquidEffectAnimation
+        imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+        metalness={0.75}
+        roughness={0.25}
+        displacementScale={5}
+        enableRain={false}
+      />
+
+      {/* Content Overlay */}
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pointer-events-none">
+        {/* Glassmorphism Card */}
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl backdrop-blur-md bg-white/10 rounded-2xl sm:rounded-3xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl pointer-events-auto">
+          {/* Icon */}
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <div className="p-3 sm:p-4 rounded-full bg-white/20 backdrop-blur-sm">
+              <Droplets className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white drop-shadow-lg" />
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-3 sm:mb-4 drop-shadow-lg tracking-tight">
+            Liquid Effect
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base md:text-lg text-white/80 text-center mb-6 sm:mb-8 leading-relaxed">
+            An immersive WebGL-powered liquid animation background using Three.js
+          </p>
+
+          {/* Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20">
+              <Waves className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-300" />
+              <span className="text-xs sm:text-sm text-white/90">WebGL</span>
+            </div>
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20">
+              <Mountain className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-300" />
+              <span className="text-xs sm:text-sm text-white/90">Three.js</span>
+            </div>
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20">
+              <Droplets className="w-3 h-3 sm:w-4 sm:h-4 text-blue-300" />
+              <span className="text-xs sm:text-sm text-white/90">Interactive</span>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-gray-900 font-semibold text-sm sm:text-base hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              View Source
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/demo"
+              className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/20 text-white font-semibold text-sm sm:text-base border border-white/30 hover:bg-white/30 transition-all duration-300 hover:scale-105"
             >
-              Learning
-            </a>{" "}
-            center.
+              Interactive Demo
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom hint */}
+        <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2">
+          <p className="text-white/60 text-xs sm:text-sm animate-pulse">
+            Move your cursor to interact with the liquid effect
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
